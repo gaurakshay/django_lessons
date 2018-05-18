@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div>
+        <button id="addCourse" data-toggle="modal" data-target="#courseAddModal">Add Course</button>
+    </div>
+    <div class="container">
+        <table class="table table-dark table-striped">
+            <caption>List of all the courses in the system.</caption>
+            <thead>
+            <tr>
+                <th scope="col">Department Code</th>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col"># Seats</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+
+            <tbody id="courseList">
+            {% for object in courses %}
+                <tr>
+                    <td> {{ object.course_dept_code }} </td>
+                    <td> {{ object.course_num_code }} </td>
+                    <td> {{ object }} </td>
+                    <td> {{ object.course_seats }} </td>
+                    <td> {{ object.course_description }} </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="courseAddModal" role="dialog">
+        <div class="modal-dialog" role="document">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Add Course</h4>
+                </div>
+                <form method="POST" role="form" id="courseForm">  {% csrf_token %}
+                    <div class="modal-body">
+                        {{ form.as_p }}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="submit" class="btn btn-primary">Save</button>
+
+                        <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock content %}
+
+{% block js %}
+    {#    <script src="{% static 'js/courses.js' %}"></script>#}
+    <script>
+        console.log(Math.random())
+        $(document).ready(function () {
+            var $editForm = $("#courseForm");
+            $editForm.submit(function (event) {
+                event.preventDefault();
+                var $formData = $(this).serialize();
+                console.log($formData);
+                {#var $endPoint = $editForm.attr('data-url') || window.location.href;#}
+                {#console.log($endPoint);#}
+                $.ajax({
+                    method: "POST",
+                    url: '{% url 'courses' %}',
+                    data: $formData,
+                    success: handleSuccess,
+                    error: handleError,
+                })
+
+                function handleSuccess(data, textStatus, jqXHR) {
+                    $editForm[0].reset();
+                    $("#courseAddModal").modal('hide');
+                    console.log(data);
+                    console.log(textStatus);
+                    console.log(jqXHR);
+                    var $obj = data['obj'];
+                    var $row = $("#courseList").prepend("<tr></tr>");
+                    $row.append("<td>" + data['dept']);
+                    $row.append("<td>" + $obj['course_num_code']);
+                    $row.append("<td>" + $obj['course_name']);
+                    $row.append("<td>" + $obj['course_seats']);
+                    $row.append("<td>" + $obj['course_description']);
+                }
+
+                function handleError(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown)
+                }
+            });
+        });
+    </script>
+{% endblock js %}

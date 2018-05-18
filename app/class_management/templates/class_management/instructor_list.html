@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    {# Start a table to display the list of students. #}
+
+    <div class="container">
+        <table class="table table-dark table-striped">
+            <caption>List of all the instructors in the system.</caption>
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Courses Offered</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td><a href={% url 'instructor_edit' pk=object.pk %}>{{ object }} </a></td>
+                    <td>
+                        {{ object.course_list }}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+
+
+{% endblock content %}

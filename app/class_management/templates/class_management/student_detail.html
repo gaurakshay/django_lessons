@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    {# Show the student as card. #}
+
+    {#    <div class="card" style="width: 100%;">#}
+    {#        {% if object.stud_pic %}#}
+    {#            <img class="card-img-top" src={{ object.stud_pic.url }} alt="Card image cap">#}
+    {#        {% else %}#}
+    {#            <img class="card-img-top" src={{ MEDIA_URL }}"/assets/img/student_pics/default.png"#}
+    {#                 alt="Student pic not available">#}
+    {#        {% endif %}#}
+    {##}
+    {#        <div class="card-body">#}
+    {#            <h5 class="card-title">{{ object }}</h5>#}
+    {#            <p class="card-text"> Courses taken: <br>#}
+    {#                {% for course in object.courses.all %}#}
+    {#                    {{ course }},#}
+    {#                {% endfor %}#}
+    {#            </p>#}
+    {#            <a href="#" class="btn btn-primary">Edit</a>#}
+    {#        </div>#}
+    {#    </div>#}
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <img src={{ object.pic_or_default }} width='360px;'>
+            </div>
+            <div class="col-sm">
+                Name: <h5>{{ object }}</h5>
+                <p> Courses taken: <br>
+                <h5>{{ object.course_list }}</h5>
+                </p>
+                <a href={% url 'student_edit' pk=object.pk%} class="btn btn-primary">Edit</a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

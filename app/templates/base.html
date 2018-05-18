@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tutorial Project</title>
+
+    {# Bootstrap CDN #}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href={% url 'welcome' %}>Tutorial Project</a>
+    {#            <a class="navbar-brand" href={% url 'welcome' %}>Tutorial Project</a>#}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="studentDropDown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Students
+                </a>
+                <div class="dropdown-menu" aria-labelledby="studentDropDown">
+                    <a class="dropdown-item" href={% url 'student_list' %}>Browse Students</a>
+                    <a class="dropdown-item" href={% url 'student_add' %}>Add Student</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="instructorDropDown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Instructors
+                </a>
+                <div class="dropdown-menu" aria-labelledby="instructorDropDown">
+                    <a class="dropdown-item" href={% url 'instructor_list' %}>Browse Instructors</a>
+                    <a class="dropdown-item" href={% url 'instructor_add' %}>Add Instructor</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="courseDropDown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Courses
+                </a>
+                <div class="dropdown-menu" aria-labelledby="courseDropDown">
+                    <a class="dropdown-item" href={% url 'courses' %}>Browse Courses</a>
+{#                    <a class="dropdown-item" href={% static 'class_managment/courses.html' %}>Browse Courses</a>#}
+                </div>
+            </li>
+{#            <li class="nav-item dropdown">#}
+{#                <a class="nav-link dropdown-toggle" href="#" id="scoreDropDown" role="button" data-toggle="dropdown"#}
+{#                   aria-haspopup="true" aria-expanded="false">#}
+{#                    Scorecards#}
+{#                </a>#}
+{#                <div class="dropdown-menu" aria-labelledby="scoreDropDown">#}
+{#                    <a class="dropdown-item" href={% url 'score_list' %}>Browse Scores</a>#}
+{#                    <a class="dropdown-item" href={% url 'score_add' %}>Add Scores</a>#}
+{#                </div>#}
+{#            </li>#}
+{#            <li class="nav-item dropdown">#}
+{#                <a class="nav-link dropdown-toggle" href="#" id="deptDropDown" role="button" data-toggle="dropdown"#}
+{#                   aria-haspopup="true" aria-expanded="false">#}
+{#                    Departments#}
+{#                </a>#}
+{#                <div class="dropdown-menu" aria-labelledby="deptDropDown">#}
+{#                    <a class="dropdown-item" href={% url 'dept_list' %}>Browse Departments</a>#}
+{#                    <a class="dropdown-item" href={% url 'dept_add' %}>Add Departments</a>#}
+{#                </div>#}
+{#            </li>#}
+
+        </ul>
+
+    </div>
+</nav>
+
+<div style="margin: 1em;">
+    {% block content %}
+        {#  CONTENT HERE.  #}
+    {% endblock content %}
+</div>
+
+
+{#  Scripts for bootstrap.  #}
+{# SLIM JQUERY DOESN'T SUPPORT AJAX.#}
+{#<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"#}
+{#        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"#}
+{#        crossorigin="anonymous"></script>#}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+{#<script src="{% static 'js/base.js' %}"></script>#}
+{% block js %}
+{% endblock js %}
+</body>
+</html>

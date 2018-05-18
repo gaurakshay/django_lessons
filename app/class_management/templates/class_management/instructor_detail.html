@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                Name: <h5>{{ object }}</h5>
+                <p> Courses offered: <br>
+                <h5>{{ object.course_list }}</h5>
+                </p>
+                {#                <a href={% url 'instructor_edit' pk=object.pk %} class="btn btn-primary">Edit</a>#}
+                <button id="instructorEditBtn" class="btn btn-primary" data-toggle="modal"
+                        data-target="#instructorEditModal">
+                    Edit
+                </button>
+                {#                    <a id="instructorEditBtn" class="btn btn-primary">Edit</a>#}
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="instructorEditModal" role="dialog">
+        <div class="modal-dialog" role="document">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Edit Instructor</h4>
+                </div>
+                <form method="POST" role="form" id="instructorForm">  {% csrf_token %}
+                    <div class="modal-body" style="padding:40px 50px;">
+                        {{ form.as_p }}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="submit" class="btn btn-primary">Save</button>
+
+                        <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log(Math.random())
+    </script>
+{% endblock content %}
+
+{% block js %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#submit').on('click', function(e){
+            e.preventDefault();
+
+            $.ajax({
+                type: 'POST',
+                url: '{% url "instructor_edit" pk=object.pk %}',
+                data: ({
+                    first_name: $('#id_first_name').val(),
+                    last_name: $('#id_last_name').val(),
+                    course_offered: $('#id_course_offered').val(),
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
+                }),
+                success: function (results) {
+                    console.log('Success')
+                }
+            });
+
+            return false;
+        });
+
+        }
+    )
+</script>
+{% endblock js %}

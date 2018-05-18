@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+    <div class="post">
+
+        {% if object.published_date %}
+
+            <div class="date">
+                {{ object.published_date }}
+            </div>
+
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'post_edit' pk=object.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+
+        <h1>{{ object.title }}</h1>
+        <p>{{ object.text|linebreaksbr }}</p>
+        {% if object.image %}
+            <img src={{ object.image.url }} width='800'>
+        {% endif %}
+    </div>
+
+
+{% endblock content %}

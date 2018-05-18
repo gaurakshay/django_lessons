@@ -1,0 +1,46 @@
+{#{% load staticfiles %}#}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>POST LIST</title>#}
+{#    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">#}
+{#    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">#}
+{#    <link rel="stylesheet" href="{%  static 'css/blog.css' %}">#}
+{#    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">#}
+{#</head>#}
+{#<body>#}
+{##}
+{##}
+{#    <div class="page-header">#}
+{#        <h1>#}
+{#            <a href="/">Blog</a>#}
+{#        </h1>#}
+{#    </div>#}
+{##}
+{##}
+{##}
+{#    <div class="content container">#}
+{#    <div class="row">#}
+{#        <div class="col-md-8">#}
+{#{% load img %}#}
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for post in object_list %}
+        <div class="post">
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
+            </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+            {% if post.image %}
+                <img src={{ post.image.url }} width='360'>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock content %}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#</body>#}
+{#</html>#}
