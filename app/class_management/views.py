@@ -8,10 +8,11 @@ from django.http import HttpResponse, HttpResponseForbidden, JsonResponse
 from django.shortcuts import render
 
 # Create your views here.
+from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, TemplateView, FormView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
-from django.views.generic.edit import FormMixin, ModelFormMixin
+from django.views.generic.edit import FormMixin, ModelFormMixin, DeleteView
 
 from class_management.forms import StudentForm, InstructorForm, CourseForm
 from class_management.models import Student, Instructor, Course, Department
@@ -58,14 +59,89 @@ class InstructorEditView(UpdateView):
     model = Instructor
     form_class = InstructorForm
 
-    def post(self, request, *args, **kwargs):
-        if request.is_ajax():
-            form = InstructorForm(request.POST or None)
-            if form.is_valid():
-                form.save()
-                return super(InstructorEditView, self).form_valid(form)
-            return super(InstructorEditView, self).form_invalid(form)
-        return HttpResponseForbidden
+    success_url = 'class_management/courses.html'
+
+    def form_invalid(self, form):
+        response = super(InstructorEditView, self).form_invalid(form)
+        if self.request.is_ajax():
+            return JsonResponse(form.errors, status=400)
+        else:
+            return response
+
+    def form_valid(self, form):
+        response = super(InstructorEditView, self).form_valid(form)
+        if self.request.is_ajax():
+            # print(form.cleaned_data)
+            # course = model_to_dict(Course.objects.get(pk=self.object.pk))
+            # department = Department.objects.get(department_code=course['course_dept_code'])
+            instructor = Instructor.objects.get(id=self.object.pk)
+            data = {
+                'message': "Successfully submitted form data.",
+                'pk': self.object.pk,
+                'name': instructor.first_name + " " + instructor.last_name,
+                'courses': instructor.course_list(),
+                # 'obj': course,
+                # 'dept': department.department_name,
+            }
+            return JsonResponse(data)
+        else:
+            return response
+
+    # def post(self, request, *args, **kwargs):
+    #     if request.is_ajax():
+    #         form = InstructorForm(request.POST or None)
+    #         if form.is_valid():
+    #             form.save()
+    #             return super(InstructorEditView, self).form_valid(form)
+    #         return super(InstructorEditView, self).form_invalid(form)
+    #     return HttpResponseForbidden
+
+
+class InstructorDeleteView(DeleteView):
+    model = Instructor
+    success_url = reverse_lazy('instructor_list')
+    template_name = 'class_management/confirm_delete.html'
+    # success_url = 'class_management/instructor_list.html'
+
+    # def get_success_url(self):
+    #     return reverse_lazy('instructor_list')
+    # def form_invalid(self, form):
+    #     response = super(InstructorDeleteView, self).form_invalid(form)
+    #     if self.request.is_ajax():
+    #         return JsonResponse(form.errors, status=400)
+    #     else:
+    #         return response
+    #
+    # def form_valid(self, form):
+    #     response = super(InstructorDeleteView, self).form_valid(form)
+    #     if self.request.is_ajax():
+    #         # print(form.cleaned_data)
+    #         # course = model_to_dict(Course.objects.get(pk=self.object.pk))
+    #         # department = Department.objects.get(department_code=course['course_dept_code'])
+    #         data = {
+    #             'message': "Successfully submitted form data.",
+    #             'pk': self.object.pk,
+    #             # 'obj': course,
+    #             # 'dept': department.department_name,
+    #         }
+    #         return JsonResponse(data)
+    #     else:
+    #         return response
+
+    def delete(self, request, *args, **kwargs):
+        """
+        Calls the delete() method on the fetched object and then
+        redirects to the success URL.
+        """
+        self.object = self.get_object()
+        pk = self.object.pk
+        # success_url = self.get_success_url()
+        self.object.delete()
+        data = {
+            'message': "Successfully deleted the instructor.",
+            'pk': pk,
+        }
+        return JsonResponse(data)
 
 
 class InstructorFormView(FormView):
@@ -79,10 +155,6 @@ class InstructorAddView(CreateView):
     form_class = InstructorForm
 
 
-# class CourseListView(SingleObjectTemplateResponseMixin, ListView):
-# class CourseListView(ModelFormMixin, ListView):
-# class CourseListView(FormMixin, ListView):
-# class CourseListView(DetailView):
 class CourseListView(CreateView):
     template_name = 'class_management/courses.html'
     model = Course

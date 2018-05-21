@@ -13,8 +13,8 @@ class StudentForm(ModelForm):
 class InstructorForm(ModelForm):
     class Meta:
         model = Instructor
-        fields = ['first_name', 'last_name']
-        # fields = ['first_name', 'last_name', 'course_offered']
+        # fields = ['first_name', 'last_name']
+        fields = ['first_name', 'last_name', 'course_offered']
 
 
 class CourseForm(ModelForm):

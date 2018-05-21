@@ -17,18 +17,128 @@
 
             <tbody>
             {% for object in object_list %}
-                <tr>
-                    <td><a href={% url 'instructor_edit' pk=object.pk %}>{{ object }} </a></td>
+                <tr id="row{{ object.pk }}">
+                    <td><a href='{% url 'instructor_edit' pk=object.pk %}'>{{ object }} </a></td>
                     <td>
                         {{ object.course_list }}
                     </td>
+                    <td>
+                        <a class="btn btn-danger" data-name="{{ object }}" data-pk="{{ object.pk }}"
+                           data-toggle="modal" data-target="#instructorDeleteModal">Delete</a>
+                    </td>
                 </tr>
+                {#                <!-- Modal -->#}
+                {#                <div class="modal fade" id="instructorDeleteModal{{ object.pk }}" role="dialog">#}
+                {#                    <div class="modal-dialog" role="document">#}
+                {##}
+                {#                        <!-- Modal content-->#}
+                {#                        <div class="modal-content">#}
+                {#                            <div class="modal-header">#}
+                {#                                <h4>Delete Instructor</h4>#}
+                {#                            </div>#}
+                {##}
+                {#                            <form action="" method="post">#}
+                {#                                {% csrf_token %}#}
+                {#                                <div class="modal-body" style="padding:40px 50px;">#}
+                {#                                    <h3>Are you sure?</h3>#}
+                {#                                    <p>You're about to delete {{ object }}. Please confirm.</p>#}
+                {#                                </div>#}
+                {#                                <div class="modal-footer" id="{{ object.id }}">#}
+                {#                                    <button type="submit" id="submit" class="btn btn-primary">Confirm</button>#}
+                {##}
+                {#                                    <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>#}
+                {#                                </div>#}
+                {#                            </form>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                </div>#}
             {% endfor %}
             </tbody>
 
         </table>
+        <!-- Modal -->
+        <div class="modal fade" id="instructorDeleteModal" role="dialog">
+            <div class="modal-dialog" role="document">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Delete Instructor</h4>
+                    </div>
+
+                    <form action="" method="post" id="instructorDeleteForm">
+                        {% csrf_token %}
+                        <div class="modal-body" style="padding:40px 50px;">
+                            <h3>Are you sure?</h3>
+                            <p id="question">You're about to delete --name--here--. Please confirm.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" id="submit" class="btn btn-primary">Confirm</button>
+                            <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
 
 
+
 {% endblock content %}
+
+{% block js %}
+
+    <script>
+        $(document).ready(function () {
+            console.log(Math.random());
+            $('#instructorDeleteModal').on('show.bs.modal', function (event) {
+                var $link = $(event.relatedTarget); // link that triggered the event.
+                $("#question").text("You're about to delete " + $link.data('name') + ". Please confirm.");
+                $("#submit").attr('data-pk', $link.data('pk'));
+                console.log($link.data('name'));
+                console.log($link.data('pk'));
+            })
+
+
+            $("#instructorDeleteForm").submit(function (event) {
+                event.preventDefault();
+                console.log('submit clicked');
+                //let $id = $("#submit").data('pk'); // This sucks because it doesn't update values
+                // once the values change as I do in the #instructor delete modal show.bs.modal function
+                // above.
+                let $id = $("#submit").attr('data-pk');
+                console.log($id);
+                let $data = $(this).serialize();
+                $.ajax({
+                    method: "POST",
+                    url: $id + "/delete/",
+                    data: $data,
+                    success: handleSuccess,
+                    error: handleError,
+                });
+
+                function handleSuccess(data, textStatus, jqXHR) {
+                    console.log("SUCCESSFULLY DELETED INSTRUCTOR.");
+                    console.log("Hiding the modal.");
+                    $('#instructorDeleteModal').modal('hide');
+
+                    console.log("Removing the deleted entry from the table.");
+                    $('#row' + data['pk']).remove();
+                    console.log(data);
+                    console.log(textStatus);
+                    console.log(jqXHR);
+                }
+
+                function handleError(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown)
+                }
+            });
+        });
+    </script>
+
+{% endblock js %}

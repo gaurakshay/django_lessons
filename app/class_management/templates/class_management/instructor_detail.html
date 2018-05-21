@@ -5,18 +5,19 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm">
+            <div class="col-sm" id="instructorDetails">
                 Name: <h5>{{ object }}</h5>
-                <p> Courses offered: <br>
+                <p> Courses offered:
                 <h5>{{ object.course_list }}</h5>
                 </p>
                 {#                <a href={% url 'instructor_edit' pk=object.pk %} class="btn btn-primary">Edit</a>#}
-                <button id="instructorEditBtn" class="btn btn-primary" data-toggle="modal"
-                        data-target="#instructorEditModal">
-                    Edit
-                </button>
+
                 {#                    <a id="instructorEditBtn" class="btn btn-primary">Edit</a>#}
             </div>
+            <button id="instructorEditBtn" class="btn btn-primary" data-toggle="modal"
+                    data-target="#instructorEditModal">
+                Edit
+            </button>
         </div>
     </div>
 
@@ -48,29 +49,48 @@
 {% endblock content %}
 
 {% block js %}
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#submit').on('click', function(e){
-            e.preventDefault();
+    <script type="text/javascript">
+        $(document).ready(function () {
+                var $instructor_form = $('#instructorForm');
+                {#$('#submit').on('click', function (e) {#}
+                $instructor_form.submit(function (event) {
+                    event.preventDefault();
+                    {#var $data = $instructor_form.serialize();#}
+                    var $data = $(this).serialize();
+                    $.ajax({
+                        method: 'POST',
+                        url: '{% url "instructor_edit" pk=object.pk %}',
+                        data: $data,
+                        success: handleSuccess,
+                        error: handleError,
+                    });
 
-            $.ajax({
-                type: 'POST',
-                url: '{% url "instructor_edit" pk=object.pk %}',
-                data: ({
-                    first_name: $('#id_first_name').val(),
-                    last_name: $('#id_last_name').val(),
-                    course_offered: $('#id_course_offered').val(),
-                    csrfmiddlewaretoken: '{{ csrf_token }}'
-                }),
-                success: function (results) {
-                    console.log('Success')
-                }
-            });
+                    function handleSuccess(data, textStatus, jqXHR) {
+                        console.log("SUCCESSFULLY EDITED INSTRUCTOR.");
+                        console.log(data);
+                        console.log(textStatus);
+                        console.log(jqXHR);
+                        $("#instructorEditModal").modal('hide');
+                        console.log("Emptying the instructor's data");
+                        var $instructorDetails = $('#instructorDetails');
+                        $instructorDetails.empty();
+                        $instructorDetails.append("Name: <h5>" + data['name'] + "</h5>");
+                        $instructorDetails.append("Courses offered: <h5>" + data['courses'] + "</h5>");
 
-            return false;
-        });
+                        {#$editForm[0].reset(); // reset form data#}
+                    }
 
-        }
-    )
-</script>
+                    function handleError(jqXHR, textStatus, errorThrown) {
+                        console.log("INSTRUCTOR EDIT FAILED.");
+                        console.log(jqXHR);
+                        console.log(textStatus);
+                        console.log(errorThrown)
+                    }
+
+                    return false;
+                });
+
+            }
+        )
+    </script>
 {% endblock js %}

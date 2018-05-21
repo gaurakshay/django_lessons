@@ -3,7 +3,7 @@ from django.conf.urls import url, include
 from class_management import views
 from class_management.views import StudentListView, StudentDetailView, StudentEditView, InstructorListView, \
     InstructorEditView, StudentAddView, InstructorAddView, CourseListView, CourseQueryView, WelcomeView, CourseView, \
-    InstructorFormView, CourseUpdateAjax
+    InstructorFormView, CourseUpdateAjax, InstructorDeleteView
 
 urlpatterns = [
     url(r'^mgmt/', include([
@@ -21,7 +21,10 @@ urlpatterns = [
         url(r'^instructors/', include([
             url(r'^$', InstructorListView.as_view(), name='instructor_list'),
             url(r'^add/$', InstructorAddView.as_view(), name='instructor_add'),
-            url(r'^(?P<pk>\d+)/$', InstructorEditView.as_view(), name='instructor_edit'),
+            url(r'^(?P<pk>\d+)/', include([
+                url(r'^$', InstructorEditView.as_view(), name='instructor_edit'),
+                url(r'^delete/', InstructorDeleteView.as_view(), name='instructor_delete')
+            ])),
             # url(r'^(?P<pk>\d+)/$', InstructorFormView.as_view(), name='instructor_edit'),
         ])),
 

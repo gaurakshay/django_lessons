@@ -2,42 +2,46 @@
 
 {% block content %}
 
-    <form method="POST" id="editForm" action="." data-url="{{ request.build_absolute_uri|safe }}" enctype='multipart/form-data'> {% csrf_token %}
+    <form method="POST" id="editForm" action="." data-url="{{ request.build_absolute_uri|safe }}"
+          enctype='multipart/form-data'> {% csrf_token %}
         {{ form.as_p|safe }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
 
 {% endblock content %}
 {% block js %}
-<script>
-$(document).ready(function() {
-   var $editForm = $("#editForm");
-   $editForm.submit(function(event) {
-       event.preventDefault();
-       var $formData = $(this).serialize();
-       console.log($formData);
-       var $endPoint = $editForm.attr('data-url') || window.location.href;
-       console.log($endPoint);
-       $.ajax({
-           method: "POST",
-           url: $endPoint,
-           data: $formData,
-           success: handleSuccess,
-           error: handleError,
-       });
-       function handleSuccess(data, textStatus, jqXHR){
-            console.log(data);
-            console.log(textStatus);
-            console.log(jqXHR);
-            {#$editForm[0].reset(); // reset form data#}
-        }
+    <script>
+        $(document).ready(function () {
+            var $editForm = $("#editForm");
+            $editForm.submit(function (event) {
+                event.preventDefault();
+                var $formData = $(this).serialize();
+                {#console.log($formData);#}
+                var $endPoint = $editForm.attr('data-url') || window.location.href;
+                {#console.log($endPoint);#}
+                $.ajax({
+                    method: "POST",
+                    url: $endPoint,
+                    data: $formData,
+                    success: handleSuccess,
+                    error: handleError,
+                });
 
-        function handleError(jqXHR, textStatus, errorThrown){
-            console.log(jqXHR);
-            console.log(textStatus);
-            console.log(errorThrown)
-        }
-   });
-});
-</script>
+                function handleSuccess(data, textStatus, jqXHR) {
+                    console.log("SUCCESSFULLY ADDED!!.");
+                    {#console.log(data);#}
+                    {#console.log(textStatus);#}
+                    {#console.log(jqXHR);#}
+                    console.log("Resetting the form.");
+                    $editForm[0].reset(); // reset form data
+                }
+
+                function handleError(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown)
+                }
+            });
+        });
+    </script>
 {% endblock js %}
