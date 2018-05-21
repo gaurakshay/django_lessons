@@ -19,6 +19,10 @@ class Department(models.Model):
     department_chair = models.CharField(max_length=200)
 
     def __unicode__(self):
+        """
+        String representation of the object.
+        :return: Department name in unicode.
+        """
         return self.department_name
 
 
@@ -28,6 +32,10 @@ class Course(models.Model):
     The primary key is a compound key (combination of department code and course number).
     """
     class Meta:
+        """
+        Defines the compound primary key for this object.
+        Also defines the table name for the object.
+        """
         unique_together = (('course_dept_code', 'course_num_code'), )
         db_table = 'courses'
     course_dept_code = models.ForeignKey(Department)
@@ -46,6 +54,10 @@ class Student(models.Model):
     The primary key is the student id.
     """
     class Meta:
+        """
+        Defines the table name for this object.
+        Also defines the default ordering for this object list.
+        """
         db_table = 'students'
         ordering = ['student_id']
     student_id = models.IntegerField(primary_key=True)
@@ -55,9 +67,17 @@ class Student(models.Model):
     courses = models.ManyToManyField(Course)
 
     def __unicode__(self):
+        """
+        String representation of the object.
+        :return: Return the string form of the object.
+        """
         return self.first_name + " " + self.last_name
 
     def get_absolute_url(self):
+        """
+        Returns the URL for this object (to show student details).
+        :return: URL that shows the details for instructor object.
+        """
         return reverse('student_details', kwargs={'pk': self.pk})
 
     def pic_or_default(self):
@@ -72,6 +92,10 @@ class Student(models.Model):
         return MEDIA_URL+'student_pics/default.png'
 
     def course_list(self):
+        """
+        Get the list of courses that every student takes.
+        :return: List of courses in csv format.
+        """
         course_list = list()
         for course in self.courses.all():
             course_list.append(course.course_name)
@@ -83,6 +107,9 @@ class Scorecard(models.Model):
     Model to store the student's scores in the courses that the student has taken.
     """
     class Meta:
+        """
+        Define the table name for storing this model in db.
+        """
         db_table = 'scorecard'
     course = models.ForeignKey(Course)
     student = models.ForeignKey(Student)
@@ -95,18 +122,33 @@ class Instructor(models.Model):
     Model to store which instructor offers what course.
     """
     class Meta:
+        """
+        Define the table name for storing this model in db.
+        """
         db_table = 'instructors'
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    course_offered = models.ManyToManyField(Course, blank=True, null=True)
+    course_offered = models.ManyToManyField(Course, blank=True)
 
     def __unicode__(self):
+        """
+        String representation of the object.
+        :return: Unicode representation of the object.
+        """
         return self.first_name + " " + self.last_name
 
     def get_absolute_url(self):
+        """
+        Return the url to display this models details.
+        :return: Link to display the details for this instructor's pk.
+        """
         return reverse('instructor_edit', kwargs={'pk': self.pk})
 
     def course_list(self):
+        """
+        List of courses that this instructor offers.
+        :return: List in csv format of the courses offered by this instructor.
+        """
         course_list = list()
         for course in self.course_offered.all():
             course_list.append(course.course_name)

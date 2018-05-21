@@ -13,7 +13,8 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200, blank=True)
     text = models.TextField()
-    created_date = models.DateTimeField(default=arrow.now().datetime)
+    # created_date = models.DateTimeField(default=arrow.now().datetime) # Warns.
+    created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     image = models.ImageField(upload_to='blog_img', blank=True)
 

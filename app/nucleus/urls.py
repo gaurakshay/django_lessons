@@ -20,14 +20,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
+admin.autodiscover()
+
 urlpatterns = [
+    # Add documentation functionality.
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
     # Added link to all the urls accessed by the blog app.
     url(r'', include('blog.urls')),
     url(r'', include('class_management.urls')),
 
 ]
-
 
 # Added path to img - AKSHAY GAUR
 # https://docs.djangoproject.com/en/2.0/howto/static-files/

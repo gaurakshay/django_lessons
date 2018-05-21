@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6d22bf8-1b9d-4b22-a0bf-e455c4997698" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/class_management/migrations/0005_auto_20180521_1532.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/class_management/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/class_management/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/class_management/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/confirm_delete.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/class_management/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/class_management/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nucleus/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nucleus/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nucleus/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nucleus/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/env/pip-selfcheck.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,62 +34,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="instructor_list.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="108" column="52" lean-forward="true" selection-start-line="108" selection-start-column="52" selection-end-line="108" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/class_management/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="156" lean-forward="true" selection-start-line="156" selection-end-line="156" />
+            <state relative-caret-position="850">
+              <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
+                <element signature="e#1815#2860#0" />
+                <element signature="e#2996#3550#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/views/generic/edit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="286" column="6" selection-start-line="286" selection-start-column="6" selection-end-line="286" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/class_management/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="29" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generic_edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="instructor_detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/instructor_detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="61" column="67" selection-start-line="61" selection-start-column="65" selection-end-line="61" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -109,6 +67,7 @@
       <find>def get(</find>
       <find>instructorEditModal</find>
       <find>success</find>
+      <find>reverse</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/blog/static</dir>
@@ -137,10 +96,7 @@
         <option value="$PROJECT_DIR$/app/blog/templates/blog/post_edit.html" />
         <option value="$PROJECT_DIR$/app/blog/templates/blog/post_new.html" />
         <option value="$PROJECT_DIR$/app/blog/views.py" />
-        <option value="$PROJECT_DIR$/app/blog/models.py" />
-        <option value="$PROJECT_DIR$/app/nucleus/urls.py" />
         <option value="$PROJECT_DIR$/app/blog/urls.py" />
-        <option value="$PROJECT_DIR$/app/class_management/admin.py" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/student_details.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/student_form.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_edit.html" />
@@ -152,20 +108,23 @@
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/student_edit.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/welcome.html" />
-        <option value="$PROJECT_DIR$/app/nucleus/settings.py" />
         <option value="$PROJECT_DIR$/app/assets/js/courses.js" />
-        <option value="$PROJECT_DIR$/app/class_management/models.py" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/course_update.html" />
         <option value="$PROJECT_DIR$/app/assets/js/generic_edit.js" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/courses.html" />
-        <option value="$PROJECT_DIR$/app/class_management/forms.py" />
         <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_detail.html" />
-        <option value="$PROJECT_DIR$/app/class_management/urls.py" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/confirm_delete.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html" />
-        <option value="$PROJECT_DIR$/app/class_management/views.py" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html" />
+        <option value="$PROJECT_DIR$/app/class_management/admin.py" />
+        <option value="$PROJECT_DIR$/app/class_management/forms.py" />
+        <option value="$PROJECT_DIR$/app/nucleus/settings.py" />
+        <option value="$PROJECT_DIR$/app/nucleus/urls.py" />
+        <option value="$PROJECT_DIR$/app/blog/models.py" />
+        <option value="$PROJECT_DIR$/app/class_management/models.py" />
+        <option value="$PROJECT_DIR$/app/class_management/urls.py" />
+        <option value="$PROJECT_DIR$/app/class_management/views.py" />
       </list>
     </option>
   </component>
@@ -179,10 +138,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2041" />
-    <option name="y" value="48" />
+    <option name="x" value="1981" />
     <option name="width" value="1502" />
-    <option name="height" value="976" />
+    <option name="height" value="975" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -206,34 +164,6 @@
               <item name="tutorial_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="tutorial_project" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tutorial_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tutorial_project" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tutorial_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tutorial_project" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="class_management" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tutorial_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tutorial_project" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="class_management" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tutorial_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tutorial_project" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="class_management" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="class_management" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -251,6 +181,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ToolWindowConcurrent Activities Diagram.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/nucleus/settings.py" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -358,21 +289,21 @@
       <window_info anchor="bottom" id="TODO" order="16" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.501224" side_tool="true" weight="0.3995657" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="12" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="12" weight="0.32861805" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.4766558" />
       <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.32899022" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32899022" />
-      <window_info anchor="bottom" id="manage.py@tutorial_project" order="1" sideWeight="0.499388" weight="0.33767644" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32861805" />
+      <window_info anchor="bottom" id="manage.py@tutorial_project" order="1" sideWeight="0.499388" weight="0.3373232" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21970624" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection Results" order="5" weight="0.32899022" />
       <window_info anchor="right" id="Database" order="2" />
-      <window_info anchor="bottom" id="Find" order="11" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Find" order="11" visible="true" weight="0.32861805" />
       <window_info anchor="right" id="SciView" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="8" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Debug" order="13" sideWeight="0.49877602" visible="true" weight="0.24156693" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="8" show_stripe_button="false" type="SLIDING" weight="0.32861805" />
+      <window_info anchor="bottom" id="Debug" order="13" sideWeight="0.49877602" weight="0.24156693" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="15" weight="0.4" />
@@ -470,13 +401,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/blog/templates/blog/post_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/lib/python2.7/site-packages/toolkit/views/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1093">
@@ -515,16 +439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
@@ -579,19 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/blog/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -607,9 +508,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/nucleus/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/student_form.html">
@@ -671,26 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/nucleus/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-          <folding>
-            <element signature="e#641#673#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/nucleus/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="67" column="59" lean-forward="true" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
-          <folding>
-            <element signature="e#312#321#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -746,26 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="103" column="53" lean-forward="true" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="53" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
@@ -794,30 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/views/generic/edit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
+        <state relative-caret-position="867">
           <caret line="286" column="6" selection-start-line="286" selection-start-column="6" selection-end-line="286" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="156" lean-forward="true" selection-start-line="156" selection-end-line="156" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -828,10 +666,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="108" column="52" lean-forward="true" selection-start-line="108" selection-start-column="52" selection-end-line="108" selection-end-column="52" />
+        <state relative-caret-position="330">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/nucleus/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+          <folding>
+            <element signature="e#312#321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/nucleus/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding>
+            <element signature="e#641#673#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/model_details">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="115" column="63" lean-forward="true" selection-start-line="115" selection-start-column="63" selection-end-line="115" selection-end-column="63" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/blog/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="106" selection-start-line="32" selection-start-column="106" selection-end-line="32" selection-end-column="106" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+            <element signature="e#1815#2860#0" />
+            <element signature="e#2996#3550#0" />
+          </folding>
         </state>
       </provider>
     </entry>

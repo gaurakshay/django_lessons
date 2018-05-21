@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'blog',
     # Added entry for class management app - AKSHAY GAUR
     'class_management',
+    # Added entry for documentation of the app - AKSHAY GAUR
+    'django.contrib.admindocs',
 ]
 
 MIDDLEWARE = [
