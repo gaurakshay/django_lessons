@@ -14,6 +14,8 @@ class Department(models.Model):
     Model that stores the department details.
     Primary key is the department key.
     """
+    class Meta:
+        db_table="departments"
     department_name = models.CharField(max_length=200)
     department_code = models.CharField(max_length=5, primary_key=True)
     department_chair = models.CharField(max_length=200)

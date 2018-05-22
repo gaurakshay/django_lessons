@@ -5,19 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6d22bf8-1b9d-4b22-a0bf-e455c4997698" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/class_management/migrations/0005_auto_20180521_1532.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/dept_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/dept_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/class_management/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/class_management/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/confirm_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/class_management/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/class_management/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nucleus/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nucleus/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nucleus/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nucleus/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/env/pip-selfcheck.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/conf/global_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/conf/global_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/contrib/admin/options.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/contrib/admin/options.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/contrib/staticfiles/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/contrib/staticfiles/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/forms/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/forms/formsets.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/forms/formsets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/forms/widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/forms/widgets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/template/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/template/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/templatetags/static.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/templatetags/static.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/test/testcases.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/test/testcases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/utils/feedgenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/lib/python2.7/site-packages/django/utils/feedgenerator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,12 +44,52 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/class_management/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+            <state relative-caret-position="96">
+              <caret line="308" column="43" lean-forward="true" selection-start-line="308" selection-start-column="43" selection-end-line="308" selection-end-column="43" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
-                <element signature="e#1815#2860#0" />
-                <element signature="e#2996#3550#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/class_management/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/views/generic/edit.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1140">
+              <caret line="182" selection-start-line="182" selection-end-line="182" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dept_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/dept_edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/blog/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+              <folding>
+                <element signature="e#24#63#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,6 +115,12 @@
       <find>instructorEditModal</find>
       <find>success</find>
       <find>reverse</find>
+      <find>jsonre</find>
+      <find>jsonresponse</find>
+      <find>max</find>
+      <find>request.GET</find>
+      <find>department</find>
+      <find>formview</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/blog/static</dir>
@@ -105,25 +158,28 @@
         <option value="$PROJECT_DIR$/app/class_management/templates/base.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/student_list.html" />
         <option value="$PROJECT_DIR$/app/assets/js/base.js" />
-        <option value="$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/student_edit.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/welcome.html" />
         <option value="$PROJECT_DIR$/app/assets/js/courses.js" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/course_update.html" />
         <option value="$PROJECT_DIR$/app/assets/js/generic_edit.js" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/courses.html" />
-        <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_detail.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/confirm_delete.html" />
-        <option value="$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html" />
         <option value="$PROJECT_DIR$/app/class_management/admin.py" />
-        <option value="$PROJECT_DIR$/app/class_management/forms.py" />
         <option value="$PROJECT_DIR$/app/nucleus/settings.py" />
         <option value="$PROJECT_DIR$/app/nucleus/urls.py" />
-        <option value="$PROJECT_DIR$/app/blog/models.py" />
-        <option value="$PROJECT_DIR$/app/class_management/models.py" />
+        <option value="$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html" />
+        <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/app/class_management/urls.py" />
+        <option value="$PROJECT_DIR$/app/class_management/templates/class_management/dept_list.html" />
+        <option value="$PROJECT_DIR$/app/class_management/templates/class_management/department_edit.html" />
+        <option value="$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html" />
+        <option value="$PROJECT_DIR$/app/class_management/models.py" />
+        <option value="$PROJECT_DIR$/app/blog/models.py" />
+        <option value="$PROJECT_DIR$/app/class_management/forms.py" />
+        <option value="$PROJECT_DIR$/app/class_management/templates/class_management/dept_edit.html" />
         <option value="$PROJECT_DIR$/app/class_management/views.py" />
       </list>
     </option>
@@ -170,6 +226,21 @@
               <item name="tutorial_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="tutorial_project" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="class_management" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorial_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorial_project" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="class_management" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="class_management" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tutorial_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tutorial_project" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -181,6 +252,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="DepartmentForm&#9;null&#9;null&#10;jsonresponse&#9;null&#9;null" />
     <property name="ToolWindowConcurrent Activities Diagram.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/nucleus/settings.py" />
@@ -192,8 +264,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/storage/media" />
       <recent name="$PROJECT_DIR$/app/class_management/templates/class_management" />
+      <recent name="$PROJECT_DIR$/storage/media" />
       <recent name="$PROJECT_DIR$/app/assets/img/student_pics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -217,6 +289,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Django server.tutorial_project">
+    <configuration name="FIREFOX" type="FirefoxRemoteDebugType" factoryName="Firefox Remote" />
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tutorial_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -261,6 +334,7 @@
     </configuration>
     <list>
       <item itemvalue="Django server.tutorial_project" />
+      <item itemvalue="Firefox Remote.FIREFOX" />
       <item itemvalue="Python.manage" />
     </list>
     <recent_temporary>
@@ -291,7 +365,7 @@
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="12" weight="0.32861805" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Python Console" order="9" weight="0.4766558" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.476605" />
       <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.32899022" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32861805" />
       <window_info anchor="bottom" id="manage.py@tutorial_project" order="1" sideWeight="0.499388" weight="0.3373232" />
@@ -299,11 +373,11 @@
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection Results" order="5" weight="0.32899022" />
       <window_info anchor="right" id="Database" order="2" />
-      <window_info active="true" anchor="bottom" id="Find" order="11" visible="true" weight="0.32861805" />
+      <window_info anchor="bottom" id="Find" order="11" show_stripe_button="false" weight="0.32861805" />
       <window_info anchor="right" id="SciView" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="8" show_stripe_button="false" type="SLIDING" weight="0.32861805" />
-      <window_info anchor="bottom" id="Debug" order="13" sideWeight="0.49877602" weight="0.24156693" />
+      <window_info active="true" anchor="bottom" id="Debug" order="13" sideWeight="0.49877602" visible="true" weight="0.46354732" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="15" weight="0.4" />
@@ -348,6 +422,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/class_management/views.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/views/generic/edit.py</url>
+          <line>106</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -355,7 +441,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="32" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Python.DjangoServer">
@@ -401,37 +487,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/env/lib/python2.7/site-packages/toolkit/views/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1093">
-          <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/img/blog_img/bridge-brooklyn-bridge-buildings-534757.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/urls/resolvers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="413" selection-start-line="413" selection-end-line="413" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/db/models/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="470" column="6" selection-start-line="470" selection-start-column="6" selection-end-line="470" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="71" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/blog/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -555,13 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/js/modal_handler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -576,22 +624,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/http/response.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="519" column="8" selection-start-line="519" selection-start-column="8" selection-end-line="519" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/course_update.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/views/generic/detail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/js/generic_edit.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -610,24 +644,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/views/generic/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-725">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/js/courses.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="55" selection-start-line="55" selection-end-line="74" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -652,20 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/views/generic/edit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="286" column="6" selection-start-line="286" selection-start-column="6" selection-end-line="286" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -680,16 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/nucleus/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
-          <folding>
-            <element signature="e#312#321#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/nucleus/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -699,9 +695,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/model_details">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/admin.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -713,57 +706,148 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="115" column="63" lean-forward="true" selection-start-line="115" selection-start-column="63" selection-end-line="115" selection-end-column="63" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/blog/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/http/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="519" column="8" selection-start-line="519" selection-start-column="8" selection-end-line="519" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-370856842/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="730" column="6" selection-start-line="730" selection-start-column="6" selection-end-line="730" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/views/generic/detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/model_details">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="106" selection-start-line="32" selection-start-column="106" selection-end-line="32" selection-end-column="106" />
+        <state relative-caret-position="285">
+          <caret line="31" column="90" selection-start-line="31" selection-start-column="90" selection-end-line="31" selection-end-column="90" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/views.py">
+    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+        <state relative-caret-position="412">
+          <caret line="72" column="66" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1633">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-            <element signature="e#1815#2860#0" />
-            <element signature="e#2996#3550#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="58" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/nucleus/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-956">
+          <caret line="59" column="13" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+          <folding>
+            <element signature="e#312#321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/views/generic/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1629">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/dept_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/lib/python2.7/site-packages/extra_views/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/lib/python2.7/site-packages/extra_views/advanced.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-315">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/blog/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/dept_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/views/generic/edit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="182" selection-start-line="182" selection-end-line="182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="308" column="43" lean-forward="true" selection-start-line="308" selection-start-column="43" selection-end-line="308" selection-end-column="43" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
           </folding>
         </state>
       </provider>

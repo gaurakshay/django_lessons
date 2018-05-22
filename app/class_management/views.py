@@ -1,19 +1,40 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import json
-
+from django.forms import formset_factory, modelformset_factory
 from django.forms.models import model_to_dict
-from django.http import HttpResponse, HttpResponseForbidden, JsonResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 from django.urls import reverse_lazy
-from django.views import View
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, TemplateView, FormView
 from django.views.generic.edit import DeleteView
+from extra_views import CreateWithInlinesView, FormSetView, ModelFormSetView
 
-from class_management.forms import StudentForm, InstructorForm, CourseForm
+from class_management.forms import StudentForm, InstructorForm, CourseForm, \
+    EmptyDepartmentForm, DepartmentInline, DepartmentForm
 from class_management.models import Student, Instructor, Course, Department
+
+
+class ImageResponseMixin(object):
+    pass
+    # def render_to_response(self, context, **kwargs):
+    #     """
+    #     Create an image response.
+    #     :param context:
+    #     :param kwargs:
+    #     :return:
+    #     """
+    #     print(self.request.GET)
+    #     if 'image' in self.request.GET.get('export', ''):
+    #         student = self.object
+    #         image = FileWrapper(open(student.stud_pic.file))
+    #         response = HttpResponse(f.read(), content_type="image/png")
+    #         response['Content-Disposition'] = 'attachment; filename=image.png'
+    #         # response['Content-Type'] = 'image/png'
+    #         return response
+    #     else:
+    #         return super(ImageResponseMixin, self).render_to_response(context, **kwargs)
 
 
 class StudentListView(ListView):
@@ -24,7 +45,7 @@ class StudentListView(ListView):
     template_name = 'class_management/student_list.html'
 
 
-class StudentDetailView(DetailView):
+class StudentDetailView(ImageResponseMixin, DetailView):
     """
     Detail view to display the details of the student.
     """
@@ -40,6 +61,37 @@ class StudentEditView(UpdateView):
     template_name = 'class_management/generic_edit.html'
     model = Student
     form_class = StudentForm
+
+    def form_invalid(self, form):
+        """
+        Handle an invalid form from the user.
+        :param form: The form that was submitted for this call.
+        :return: Response with error details.
+        """
+        response = super(StudentEditView, self).form_invalid(form)
+        if self.request.is_ajax():
+            return JsonResponse(form.errors, status=400)
+        else:
+            return response
+
+    def form_valid(self, form):
+        """
+        Handle the valid ajax request.
+        :param form: Form that was submitted for this request.
+        :return: Success message and other relevant info for further processing.
+        """
+        response = super(StudentEditView, self).form_valid(form)
+        if self.request.is_ajax():
+            student = Student.objects.get(student_id=self.object.pk)
+            data = {
+                'message': "Successfully submitted form data.",
+                'pk': self.object.pk,
+                'name': student.first_name + " " + student.last_name,
+                'courses': student.course_list(),
+            }
+            return JsonResponse(data)
+        else:
+            return response
 
 
 class StudentAddView(CreateView):
@@ -123,7 +175,7 @@ class InstructorDeleteView(DeleteView):
         redirects to the success URL.
         """
         self.object = self.get_object()
-        pk = self.object.pk
+        pk = self.object.pk  # Save the primary key before the object is deleted.
         self.object.delete()
         data = {
             'message': "Successfully deleted the instructor.",
@@ -196,20 +248,25 @@ class CourseListView(CreateView):
             return response
 
 
-class CourseUpdateAjax(CreateView):
+class CourseAddView(CreateView):
+    """
+    Add course views using AJAX call.
+    Overrides form_invalid and form_valid methods of the super.
+
+    """
     template_name = 'class_management/generic_edit.html'
     form_class = CourseForm
     success_url = 'class_management/courses.html'
 
     def form_invalid(self, form):
-        response = super(CourseUpdateAjax, self).form_invalid(form)
+        response = super(CourseAddView, self).form_invalid(form)
         if self.request.is_ajax():
             return JsonResponse(form.errors, status=400)
         else:
             return response
 
     def form_valid(self, form):
-        response = super(CourseUpdateAjax, self).form_valid(form)
+        response = super(CourseAddView, self).form_valid(form)
         if self.request.is_ajax():
             print(form.cleaned_data)
             data = {
@@ -221,10 +278,51 @@ class CourseUpdateAjax(CreateView):
             return response
 
 
-class CourseQueryView(View):
-    def get(self, request, *args, **kwargs):
-        if request.is_ajax():
-            course_names = [course.course_name for course in Course.objects.all()]
-            data = json.dumps(course_names)
-            return HttpResponse(data, content_type='application/json')
-        return HttpResponseForbidden
+class AjaxMixin(object):
+    def form_invalid(self, form):
+        response = super(AjaxMixin, self).form_invalid(form)
+        if self.request.is_ajax():
+            return JsonResponse(form.errors, status=400)
+        else:
+            return response
+
+    def form_valid(self, form):
+        response = super(AjaxMixin, self).form_valid(form)
+        if self.request.is_ajax():
+            data = {
+                'message': "Ajax call successful.",
+            }
+            return JsonResponse(data)
+        else:
+            return response
+
+
+class DepartmentListView(ListView):
+    template_name = 'class_management/dept_list.html'
+    model = Department
+
+
+class DepartmentAddView(FormView):
+    DepartmentFormset = modelformset_factory(model=Department, form=DepartmentForm)
+    form_class = DepartmentFormset
+    template_name = 'class_management/dept_edit.html'
+    success_url = reverse_lazy('dept_list')
+
+    def get_context_data(self, **kwargs):
+        DepartmentFormset = modelformset_factory(model=Department, form=DepartmentForm)
+        data = super(DepartmentAddView, self).get_context_data(**kwargs)
+        if self.request.POST:
+            data['departments'] = DepartmentFormset(self.request.POST)
+        else:
+            data['departments'] = DepartmentFormset()
+        return data
+
+    def form_valid(self, form_):
+        context = self.get_context_data()
+        departments = context['departments']
+        departments.save()
+
+        return HttpResponseRedirect(self.get_success_url())
+
+    def get_success_url(self):
+        return reverse_lazy('dept_list')

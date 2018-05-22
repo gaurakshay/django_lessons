@@ -1,8 +1,8 @@
 from django.conf.urls import url, include
 
 from class_management.views import StudentListView, StudentDetailView, StudentEditView, InstructorListView, \
-    InstructorEditView, StudentAddView, InstructorAddView, CourseListView, CourseQueryView, WelcomeView, \
-    CourseUpdateAjax, InstructorDeleteView
+    InstructorEditView, StudentAddView, InstructorAddView, CourseListView, WelcomeView, \
+    CourseAddView, InstructorDeleteView, DepartmentListView, DepartmentAddView
 
 urlpatterns = [
     url(r'^mgmt/', include([
@@ -21,7 +21,7 @@ urlpatterns = [
             url(r'^$', InstructorListView.as_view(), name='instructor_list'),  # List view.
             url(r'^add/$', InstructorAddView.as_view(), name='instructor_add'),  # Add view.
             url(r'^(?P<pk>\d+)/', include([
-                url(r'^$', InstructorEditView.as_view(), name='instructor_edit'),  # Edit view.
+                url(r'^$', InstructorEditView.as_view(), name='instructor_edit'),  # Edit view + Detail view.
                 url(r'^delete/', InstructorDeleteView.as_view(), name='instructor_delete')  # Delete view.
             ])),
         ])),
@@ -29,7 +29,11 @@ urlpatterns = [
         # TODO update the course views.
         url(r'^courses/$', CourseListView.as_view(), name='courses'),  # Course view.
         # View the courses by running a AJAX query to fetch the course details.
-        url(r'^ajax_courses/$', CourseQueryView.as_view(), name='ajax_courses'),
-        url(r'^course_update_ajax/$', CourseUpdateAjax.as_view(), name='course_update_ajax')  # Edit view.
+        url(r'^course_update_ajax/$', CourseAddView.as_view(), name='course_update_ajax'),  # Edit view.
+
+        url(r'^dept/', include([
+            url(r'^browse/$', DepartmentListView.as_view(), name='dept_list'),
+            url(r'^add/$', DepartmentAddView.as_view(), name='dept_add'),
+        ])),
     ])),
 ]

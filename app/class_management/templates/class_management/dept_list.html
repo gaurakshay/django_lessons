@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    {# Start a table to display the list of students. #}
+
+    <div class="container">
+        <table class="table table-dark table-striped">
+            <caption>List of all the departments in the system.</caption>
+            <thead>
+            <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Name</th>
+                <th scope="col">Chair</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td> {{ object.department_code }}  </td>
+                    <td> {{ object }} </td>
+                    <td> {{ object.department_chair }} </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+{% endblock content %}
