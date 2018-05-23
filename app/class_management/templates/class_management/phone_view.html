@@ -5,11 +5,18 @@
     <h3>Add phone numbers to {{ object }} ({{ object.student_id }}).</h3>
 
     <form method="post" action="">  {% csrf_token %}
-        {{ formset.managment_form }}
+        {{ formset.management_form }}
 
         <div class="content">
-            {% for form in formset %}
+            {# IMPORTANT #}
+            {# If these hidden fields are not included, MULTIVALUEDICTKEYERROR is thrown. #}
+            {% for form in formset.forms %}
+
+                {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                {% endfor %}
                 <div class="row">
+                    {#                    {{ form.as_p }}#}
                     Phone Number:
                     (
                     <div class="form-group col-1">
@@ -26,6 +33,7 @@
                 </div>
             {% endfor %}
         </div>
+        {{ formset.managment_form }}
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
