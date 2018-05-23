@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'class_management',
     # Added entry for documentation of the app - AKSHAY GAUR
     'django.contrib.admindocs',
+    # Added entry for widget-tweaks for that sweet sweet form display
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

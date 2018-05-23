@@ -1,24 +1,26 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models
+# from django.db import models
 
 # Create your models here.
+from django.db.models import Model, CharField, ForeignKey, IntegerField, TextField, ManyToManyField, DecimalField, \
+    BooleanField, ImageField
 from django.urls import reverse
 
 from nucleus.settings import MEDIA_URL
 
 
-class Department(models.Model):
+class Department(Model):
     """
     Model that stores the department details.
     Primary key is the department key.
     """
     class Meta:
         db_table="departments"
-    department_name = models.CharField(max_length=200)
-    department_code = models.CharField(max_length=5, primary_key=True)
-    department_chair = models.CharField(max_length=200)
+    department_name = CharField(max_length=200)
+    department_code = CharField(max_length=5, primary_key=True)
+    department_chair = CharField(max_length=200)
 
     def __unicode__(self):
         """
@@ -28,7 +30,7 @@ class Department(models.Model):
         return self.department_name
 
 
-class Course(models.Model):
+class Course(Model):
     """
     Model to store the course details.
     The primary key is a compound key (combination of department code and course number).
@@ -40,17 +42,17 @@ class Course(models.Model):
         """
         unique_together = (('course_dept_code', 'course_num_code'), )
         db_table = 'courses'
-    course_dept_code = models.ForeignKey(Department)
-    course_num_code = models.IntegerField()
-    course_name = models.CharField(max_length=200)
-    course_seats = models.IntegerField()
-    course_description = models.TextField(blank=True)
+    course_dept_code = ForeignKey(Department)
+    course_num_code = IntegerField()
+    course_name = CharField(max_length=200)
+    course_seats = IntegerField()
+    course_description = TextField(blank=True)
 
     def __unicode__(self):
         return self.course_name
 
 
-class Student(models.Model):
+class Student(Model):
     """
     Model to store the student details.
     The primary key is the student id.
@@ -62,11 +64,11 @@ class Student(models.Model):
         """
         db_table = 'students'
         ordering = ['student_id']
-    student_id = models.IntegerField(primary_key=True)
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    stud_pic = models.ImageField(upload_to='student_pics', blank=True)
-    courses = models.ManyToManyField(Course)
+    student_id = IntegerField(primary_key=True)
+    first_name = CharField(max_length=200)
+    last_name = CharField(max_length=200)
+    stud_pic = ImageField(upload_to='student_pics', blank=True)
+    courses = ManyToManyField(Course)
 
     def __unicode__(self):
         """
@@ -104,7 +106,23 @@ class Student(models.Model):
         return ', '.join(course_list)
 
 
-class Scorecard(models.Model):
+class PhoneNumber(Model):
+    """
+    Phone number. Students can have multiple phone numbers.
+    """
+    area_code = DecimalField(max_digits=3, decimal_places=0)
+    first_three = DecimalField(max_digits=3, decimal_places=0)
+    last_four = DecimalField(max_digits=4, decimal_places=0)
+    student = ForeignKey(Student, null=True)
+
+    class Meta:
+        db_table = "phone_numbers"
+
+    def __unicode__(self):
+        return '({}) {}-{}'.format(self.area_code, self.first_three, self.last_four)
+
+
+class Scorecard(Model):
     """
     Model to store the student's scores in the courses that the student has taken.
     """
@@ -113,13 +131,13 @@ class Scorecard(models.Model):
         Define the table name for storing this model in db.
         """
         db_table = 'scorecard'
-    course = models.ForeignKey(Course)
-    student = models.ForeignKey(Student)
-    score = models.DecimalField(max_digits=5, decimal_places=2)
-    passed = models.BooleanField()
+    course = ForeignKey(Course)
+    student = ForeignKey(Student)
+    score = DecimalField(max_digits=5, decimal_places=2)
+    passed = BooleanField()
 
 
-class Instructor(models.Model):
+class Instructor(Model):
     """
     Model to store which instructor offers what course.
     """
@@ -128,9 +146,9 @@ class Instructor(models.Model):
         Define the table name for storing this model in db.
         """
         db_table = 'instructors'
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    course_offered = models.ManyToManyField(Course, blank=True)
+    first_name = CharField(max_length=200)
+    last_name = CharField(max_length=200)
+    course_offered = ManyToManyField(Course, blank=True)
 
     def __unicode__(self):
         """

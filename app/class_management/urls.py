@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 
 from class_management.views import StudentListView, StudentDetailView, StudentEditView, InstructorListView, \
     InstructorEditView, StudentAddView, InstructorAddView, CourseListView, WelcomeView, \
-    CourseAddView, InstructorDeleteView, DepartmentListView, DepartmentAddView
+    CourseAddView, InstructorDeleteView, DepartmentListView, DepartmentAddView, PhoneAddView
 
 urlpatterns = [
     url(r'^mgmt/', include([
@@ -35,5 +35,7 @@ urlpatterns = [
             url(r'^browse/$', DepartmentListView.as_view(), name='dept_list'),
             url(r'^add/$', DepartmentAddView.as_view(), name='dept_add'),
         ])),
+
+        url(r'^(?P<pk>\d+)/phones/$', PhoneAddView.as_view(), name='phone_view'),
     ])),
 ]

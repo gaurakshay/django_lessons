@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.forms import formset_factory, modelformset_factory
+from django.forms import formset_factory, modelformset_factory, widgets, TextInput
 from django.forms.models import model_to_dict
 from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 
@@ -9,11 +9,11 @@ from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, TemplateView, FormView
 from django.views.generic.edit import DeleteView
-from extra_views import ModelFormSetView
+from extra_views import ModelFormSetView, InlineFormSetView
 
 from class_management.forms import StudentForm, InstructorForm, CourseForm, \
     DepartmentForm
-from class_management.models import Student, Instructor, Course, Department
+from class_management.models import Student, Instructor, Course, Department, PhoneNumber
 
 
 class ImageResponseMixin(object):
@@ -332,3 +332,18 @@ class DepartmentAddView(ModelFormSetView):
     model = Department
     template_name = 'class_management/dept_edit.html'
     fields = '__all__'
+
+
+class PhoneAddView(InlineFormSetView):
+    model = Student
+    inline_model = PhoneNumber
+    template_name = 'class_management/phone_view.html'
+    fields = ['area_code', 'first_three', 'last_four']
+    factory_kwargs = {
+        'widgets': {
+            'area_code': TextInput(),
+            'first_three': TextInput(),
+            'last_four': TextInput(),
+        },
+        'extra': 1,
+    }

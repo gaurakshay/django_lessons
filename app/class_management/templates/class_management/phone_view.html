@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <h3>Add phone numbers to {{ object }} ({{ object.student_id }}).</h3>
+
+    <form method="post" action="">  {% csrf_token %}
+        {{ formset.managment_form }}
+
+        <div class="content">
+            {% for form in formset %}
+                <div class="row">
+                    Phone Number:
+                    (
+                    <div class="form-group col-1">
+                        {% render_field form.area_code class='form-control form-control-sm' %}
+                    </div>
+                    )
+                    -
+                    <div class="form-group col-1">
+                        {% render_field form.first_three class='form-control form-control-sm' %}
+                    </div>
+                    <div class="form-group col-1">
+                        {% render_field form.last_four class='form-control form-control-sm' %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+
+{% endblock content %}
