@@ -9,10 +9,10 @@ from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, TemplateView, FormView
 from django.views.generic.edit import DeleteView
-from extra_views import CreateWithInlinesView, FormSetView, ModelFormSetView
+from extra_views import ModelFormSetView
 
 from class_management.forms import StudentForm, InstructorForm, CourseForm, \
-    EmptyDepartmentForm, DepartmentInline, DepartmentForm
+    DepartmentForm
 from class_management.models import Student, Instructor, Course, Department
 
 
@@ -302,27 +302,33 @@ class DepartmentListView(ListView):
     model = Department
 
 
-class DepartmentAddView(FormView):
-    DepartmentFormset = modelformset_factory(model=Department, form=DepartmentForm)
-    form_class = DepartmentFormset
+# class DepartmentAddView(FormView):
+#     DepartmentFormset = modelformset_factory(model=Department, form=DepartmentForm)
+#     form_class = DepartmentFormset
+#     template_name = 'class_management/dept_edit.html'
+#     success_url = reverse_lazy('dept_list')
+#
+#     def get_context_data(self, **kwargs):
+#         DepartmentFormset = modelformset_factory(model=Department, form=DepartmentForm)
+#         data = super(DepartmentAddView, self).get_context_data(**kwargs)
+#         if self.request.POST:
+#             data['departments'] = DepartmentFormset(self.request.POST)
+#         else:
+#             data['departments'] = DepartmentFormset()
+#         return data
+#
+#     def form_valid(self, form_):
+#         context = self.get_context_data()
+#         departments = context['departments']
+#         departments.save()
+#
+#         return HttpResponseRedirect(self.get_success_url())
+#
+#     def get_success_url(self):
+#         return reverse_lazy('dept_list')
+
+
+class DepartmentAddView(ModelFormSetView):
+    model = Department
     template_name = 'class_management/dept_edit.html'
-    success_url = reverse_lazy('dept_list')
-
-    def get_context_data(self, **kwargs):
-        DepartmentFormset = modelformset_factory(model=Department, form=DepartmentForm)
-        data = super(DepartmentAddView, self).get_context_data(**kwargs)
-        if self.request.POST:
-            data['departments'] = DepartmentFormset(self.request.POST)
-        else:
-            data['departments'] = DepartmentFormset()
-        return data
-
-    def form_valid(self, form_):
-        context = self.get_context_data()
-        departments = context['departments']
-        departments.save()
-
-        return HttpResponseRedirect(self.get_success_url())
-
-    def get_success_url(self):
-        return reverse_lazy('dept_list')
+    fields = '__all__'

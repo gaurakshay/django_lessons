@@ -43,9 +43,9 @@ class DepartmentForm(ModelForm):
         fields = ['department_code', 'department_name', 'department_chair']
 
 
-class DepartmentInline(InlineFormSet):
-    model = Department
-    form_class = DepartmentForm
+# class DepartmentInline(InlineFormSet):
+#     model = Department
+#     form_class = DepartmentForm
     # extra = 1
 
 
