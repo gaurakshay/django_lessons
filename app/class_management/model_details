@@ -1,27 +1,3 @@
 CREATE USER tutorial_user;
 CREATE DATABASE tutorial_database OWNER tutorial_user;
 ALTER USER tutorial_user WITH PASSWORD 'tutorial';
-
-app design ideas.
-
-Class Management System
-
-Model 2 - Instructor (Name, Code)
-Model 3 - Student (Name, Code, Score)
-Model 4 - Location (Room name, seating capacity)
-Model 5 - Code (Department, Code, Name)
-
-
-
-https://vcs.outreach.ou.edu/projects/APMIS/repos/apmis/browse/ap/organization/views/file_uploads.py#1,44 (REDUCING THE FILTER CRITERIAS)
-
-
-https://vcs.outreach.ou.edu/projects/PACSMIS/repos/pacsmis/browse/instructors/templates
-(INSTRUCTOR TEMPLATES)
-
-
-
-how to access base.html from project level template folder?
-list comprehension in template? or in view? how?
-how to set image source in view.py
-
