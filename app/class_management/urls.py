@@ -30,13 +30,8 @@ urlpatterns = [
         # TODO update the course views.
         url(r'^courses/', include([
             url(r'^$', CourseListView.as_view(), name='course_list'),
-            # url(r'^add/$', CourseAddView.as_view(), name='course_add'),
             url(r'^(?P<pk>\d+)/delete/$', CourseDeleteView.as_view(), name='course_delete'),
         ])),
-        # url(r'^courses/$', CourseListView.as_view(), name='courses'),  # Course view.
-        # # View the courses by running a AJAX query to fetch the course details.
-        # url(r'^course_update_ajax/$', CourseAddView.as_view(), name='course_update_ajax'),  # Edit view.
-        # url(r'^courses/(?P<pk>\d+)/delete/$', PhoneDeleteView.as_view(), name='phone_delete'),  # Delete View.
 
         url(r'^dept/', include([
             url(r'^browse/$', DepartmentListView.as_view(), name='dept_list'),

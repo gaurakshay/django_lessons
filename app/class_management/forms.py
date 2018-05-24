@@ -41,13 +41,3 @@ class DepartmentForm(ModelForm):
     class Meta:
         model = Department
         fields = ['department_code', 'department_name', 'department_chair']
-
-
-# class DepartmentInline(InlineFormSet):
-#     model = Department
-#     form_class = DepartmentForm
-    # extra = 1
-
-
-# Add model form set for the department model.
-# DepartmentFormset = modelformset_factory(model=Department, form=DepartmentForm)

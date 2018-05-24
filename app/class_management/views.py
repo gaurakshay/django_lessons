@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.forms import formset_factory, modelformset_factory, widgets, TextInput
+from django.forms import TextInput
 from django.forms.models import model_to_dict
-from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
+from django.http import JsonResponse
 
 # Create your views here.
 from django.urls import reverse_lazy
@@ -11,30 +11,8 @@ from django.views.generic import ListView, DetailView, UpdateView, CreateView, T
 from django.views.generic.edit import DeleteView
 from extra_views import ModelFormSetView, InlineFormSetView
 
-from class_management.forms import StudentForm, InstructorForm, CourseForm, \
-    DepartmentForm
+from class_management.forms import StudentForm, InstructorForm, CourseForm
 from class_management.models import Student, Instructor, Course, Department, PhoneNumber
-
-
-class ImageResponseMixin(object):
-    pass
-    # def render_to_response(self, context, **kwargs):
-    #     """
-    #     Create an image response.
-    #     :param context:
-    #     :param kwargs:
-    #     :return:
-    #     """
-    #     print(self.request.GET)
-    #     if 'image' in self.request.GET.get('export', ''):
-    #         student = self.object
-    #         image = FileWrapper(open(student.stud_pic.file))
-    #         response = HttpResponse(f.read(), content_type="image/png")
-    #         response['Content-Disposition'] = 'attachment; filename=image.png'
-    #         # response['Content-Type'] = 'image/png'
-    #         return response
-    #     else:
-    #         return super(ImageResponseMixin, self).render_to_response(context, **kwargs)
 
 
 class StudentListView(ListView):
@@ -246,36 +224,6 @@ class CourseListView(CreateView):
             return JsonResponse(data)
         else:
             return response
-
-
-# class CourseAddView(CreateView):
-#     """
-#     Add course views using AJAX call.
-#     Overrides form_invalid and form_valid methods of the super.
-#
-#     """
-#     template_name = 'class_management/generic_edit.html'
-#     form_class = CourseForm
-#     success_url = 'class_management/courses.html'
-#
-#     def form_invalid(self, form):
-#         response = super(CourseAddView, self).form_invalid(form)
-#         if self.request.is_ajax():
-#             return JsonResponse(form.errors, status=400)
-#         else:
-#             return response
-#
-#     def form_valid(self, form):
-#         response = super(CourseAddView, self).form_valid(form)
-#         if self.request.is_ajax():
-#             print(form.cleaned_data)
-#             data = {
-#                 'message': "Successfully submitted form data.",
-#                 'pk': self.object.pk,
-#             }
-#             return JsonResponse(data)
-#         else:
-#             return response
 
 
 class CourseDeleteView(DeleteView):
