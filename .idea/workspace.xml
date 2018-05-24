@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6d22bf8-1b9d-4b22-a0bf-e455c4997698" name="Default" comment="Updated modelformset to use django-extra-views. Makes it much more simpler.">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/js/instructor_detail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/js/instructor_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/js/courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/js/courses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/js/generic_edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/js/generic_edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/phone_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/phone_view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/class_management/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/class_management/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,65 +39,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="phone_view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/phone_view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generic_edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="instructor_detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/instructor_detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="instructor_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-63">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="student_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            <state relative-caret-position="240">
+              <caret line="16" column="127" selection-start-line="16" selection-start-column="127" selection-end-line="16" selection-end-column="127" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="student_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/student_list.html">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+            <state relative-caret-position="439">
+              <caret line="102" column="4" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/welcome.html">
+      <file leaf-file-name="base.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="60">
+              <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -191,7 +144,6 @@
         <option value="$PROJECT_DIR$/app/class_management/forms.py" />
         <option value="$PROJECT_DIR$/app/nucleus/settings.py" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/phone_view.html" />
-        <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/app/class_management/views.py" />
         <option value="$PROJECT_DIR$/app/class_management/urls.py" />
         <option value="$PROJECT_DIR$/app/assets/js/courses.js" />
@@ -203,6 +155,7 @@
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/instructor_list.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html" />
         <option value="$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html" />
+        <option value="$PROJECT_DIR$/app/templates/base.html" />
       </list>
     </option>
   </component>
@@ -426,7 +379,7 @@
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.501224" side_tool="true" weight="0.3995657" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.3297062" />
+      <window_info anchor="bottom" id="Version Control" order="2" visible="true" weight="0.3297062" />
       <window_info anchor="right" x="136" y="90" width="1357" height="935" id="Python Console" order="8" sideWeight="0.5005441" side_tool="true" type="FLOATING" weight="0.32802936" />
       <window_info anchor="bottom" id="Run" order="9" weight="0.32861805" />
       <window_info anchor="right" id="Terminal" order="6" sideWeight="0.49945593" weight="0.32802936" />
@@ -436,7 +389,7 @@
       <window_info anchor="right" id="SciView" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info anchor="right" x="67" y="27" width="1791" height="919" id="Debug" order="5" sideWeight="0.49727964" type="FLOATING" visible="true" weight="0.35189718" />
+      <window_info anchor="right" x="67" y="27" width="1791" height="919" id="Debug" order="5" sideWeight="0.49727964" type="FLOATING" weight="0.35189718" />
       <window_info anchor="right" x="103" y="57" width="1350" height="929" id="manage.py@tutorial_project" order="7" sideWeight="0.50272036" side_tool="true" type="FLOATING" weight="0.23011015" />
       <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.32899022" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
@@ -491,6 +444,17 @@
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
               </option>
               <option name="COLUMN_ORDER">
                 <list>
@@ -647,13 +611,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/js/modal_handler.js" />
-    <entry file="file://$PROJECT_DIR$/app/assets/js/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/confirm_delete.html" />
     <entry file="file://$PROJECT_DIR$/app/class_management/apps.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -786,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="94" column="28" lean-forward="true" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -872,6 +822,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/phone_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/generic_edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -893,20 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/phone_view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/student_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -916,8 +859,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="45">
+          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class_management/templates/class_management/student_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="127" selection-start-line="16" selection-start-column="127" selection-end-line="16" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/js/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="102" column="4" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
         </state>
       </provider>
     </entry>

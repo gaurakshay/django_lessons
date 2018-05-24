@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <p><img src={{ object.pic_or_default }} width='360px;'></p>
+                <p><img src='{{ object.pic_or_default }}' width='360px;'></p>
                 <a class="btn btn-default" href="{{ object.pic_or_default }}" download >Download</a>
             </div>
             <div class="col-sm">
@@ -14,7 +14,7 @@
                 <p> Courses taken: <br>
                 <h5>{{ object.course_list }}</h5>
                 </p>
-                <a href="{% url 'student_edit' pk=object.pk %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'student_edit' pk=object.pk %}" class="btn btn-primary" title="Follow link to edit this student">Edit</a>
             </div>
         </div>
     </div>
