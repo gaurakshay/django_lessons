@@ -1,3 +1,5 @@
+How to create a db in postgres and set password.
+
 CREATE USER tutorial_user;
 CREATE DATABASE tutorial_database OWNER tutorial_user;
 ALTER USER tutorial_user WITH PASSWORD 'tutorial';
