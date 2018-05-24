@@ -2,12 +2,12 @@
 {% load widget_tweaks %}
 
 {% block content %}
-    <h3>Add phone numbers to {{ object }} ({{ object.student_id }}).</h3>
+    <h3>Add phone numbers to {{ student }} ({{ student.student_id }}).</h3>
 
     <form method="post" action="">  {% csrf_token %}
         {{ formset.management_form }}
 
-        <div class="content">
+        <div class="container">
             {# IMPORTANT #}
             {# If these hidden fields are not included, MULTIVALUEDICTKEYERROR is thrown. #}
             {% for form in formset.forms %}
@@ -32,11 +32,11 @@
                     </div>
                 </div>
             {% endfor %}
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-        {{ formset.managment_form }}
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+        {#        {{ formset.managment_form }}#}
 
+    </form>
 
 
 {% endblock content %}

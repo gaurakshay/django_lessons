@@ -248,34 +248,57 @@ class CourseListView(CreateView):
             return response
 
 
-class CourseAddView(CreateView):
+# class CourseAddView(CreateView):
+#     """
+#     Add course views using AJAX call.
+#     Overrides form_invalid and form_valid methods of the super.
+#
+#     """
+#     template_name = 'class_management/generic_edit.html'
+#     form_class = CourseForm
+#     success_url = 'class_management/courses.html'
+#
+#     def form_invalid(self, form):
+#         response = super(CourseAddView, self).form_invalid(form)
+#         if self.request.is_ajax():
+#             return JsonResponse(form.errors, status=400)
+#         else:
+#             return response
+#
+#     def form_valid(self, form):
+#         response = super(CourseAddView, self).form_valid(form)
+#         if self.request.is_ajax():
+#             print(form.cleaned_data)
+#             data = {
+#                 'message': "Successfully submitted form data.",
+#                 'pk': self.object.pk,
+#             }
+#             return JsonResponse(data)
+#         else:
+#             return response
+
+
+class CourseDeleteView(DeleteView):
     """
-    Add course views using AJAX call.
-    Overrides form_invalid and form_valid methods of the super.
-
+    Delete view for the instructor, uses modal to confirm deletion.
     """
-    template_name = 'class_management/generic_edit.html'
-    form_class = CourseForm
-    success_url = 'class_management/courses.html'
+    model = Course
+    success_url = reverse_lazy('courses_list')
+    template_name = 'class_management/courses.html'
 
-    def form_invalid(self, form):
-        response = super(CourseAddView, self).form_invalid(form)
-        if self.request.is_ajax():
-            return JsonResponse(form.errors, status=400)
-        else:
-            return response
-
-    def form_valid(self, form):
-        response = super(CourseAddView, self).form_valid(form)
-        if self.request.is_ajax():
-            print(form.cleaned_data)
-            data = {
-                'message': "Successfully submitted form data.",
-                'pk': self.object.pk,
-            }
-            return JsonResponse(data)
-        else:
-            return response
+    def delete(self, request, *args, **kwargs):
+        """
+        Calls the delete() method on the fetched object and then
+        redirects to the success URL.
+        """
+        self.object = self.get_object()
+        pk = self.object.pk  # Save the primary key before the object is deleted.
+        self.object.delete()
+        data = {
+            'message': "Deletion successful.",
+            'pk': pk,
+        }
+        return JsonResponse(data)
 
 
 class AjaxMixin(object):

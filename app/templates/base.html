@@ -43,26 +43,22 @@
                 </div>
             </li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="courseDropDown" role="button" data-toggle="dropdown"
+{#            <li class="nav-item dropdown">#}
+{#                <a class="nav-link dropdown-toggle" href="#" id="courseDropDown" role="button" data-toggle="dropdown"#}
+{#                   aria-haspopup="true" aria-expanded="false">#}
+{#                    Courses#}
+{#                </a>#}
+{#                <div class="dropdown-menu" aria-labelledby="courseDropDown">#}
+{#                    <a class="dropdown-item" href={% url 'course_list' %}>Browse Courses</a>#}
+{#                </div>#}
+{#            </li>#}
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'course_list' %}" role="button"
                    aria-haspopup="true" aria-expanded="false">
                     Courses
                 </a>
-                <div class="dropdown-menu" aria-labelledby="courseDropDown">
-                    <a class="dropdown-item" href={% url 'courses' %}>Browse Courses</a>
-{#                    <a class="dropdown-item" href={% static 'class_managment/courses.html' %}>Browse Courses</a>#}
-                </div>
             </li>
-{#            <li class="nav-item dropdown">#}
-{#                <a class="nav-link dropdown-toggle" href="#" id="scoreDropDown" role="button" data-toggle="dropdown"#}
-{#                   aria-haspopup="true" aria-expanded="false">#}
-{#                    Scorecards#}
-{#                </a>#}
-{#                <div class="dropdown-menu" aria-labelledby="scoreDropDown">#}
-{#                    <a class="dropdown-item" href={% url 'score_list' %}>Browse Scores</a>#}
-{#                    <a class="dropdown-item" href={% url 'score_add' %}>Add Scores</a>#}
-{#                </div>#}
-{#            </li>#}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="deptDropDown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">

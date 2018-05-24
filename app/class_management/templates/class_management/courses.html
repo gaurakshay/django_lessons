@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 
 {% block content %}
 
-    <div>
-        <button id="addCourse" data-toggle="modal" data-target="#courseAddModal">Add Course</button>
-    </div>
     <div class="container">
-        <table class="table table-dark table-striped">
+        <table class="table table-dark">
             <caption>List of all the courses in the system.</caption>
             <thead>
             <tr>
@@ -20,16 +18,51 @@
 
             <tbody id="courseList">
             {% for object in courses %}
-                <tr>
+                <tr id="row{{ object.pk }}">
                     <td> {{ object.course_dept_code }} </td>
                     <td> {{ object.course_num_code }} </td>
                     <td> {{ object }} </td>
                     <td> {{ object.course_seats }} </td>
                     <td> {{ object.course_description }} </td>
+                    <td>
+                        <a class="btn btn-danger" data-name="{{ object }}" data-pk="{{ object.pk }}"
+                           data-toggle="modal" data-target="#courseDeleteModal">Delete</a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
+
+        <div class="container">
+            <button id="addCourse" class="btn btn-primary" data-toggle="modal" data-target="#courseAddModal">Add
+                Course
+            </button>
+        </div>
+    </div>
+
+    {% comment %} MODAL {% endcomment %}
+    <div class="modal fade" id="courseDeleteModal" role="dialog">
+        <div class="modal-dialog" role="document">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Delete Course</h4>
+                </div>
+
+                <form action="" method="post" id="courseDeleteForm">
+                    {% csrf_token %}
+                    <div class="modal-body" style="padding:40px 50px;">
+                        <h3>Are you sure?</h3>
+                        <p id="question">You're about to delete --name--here--. Please confirm.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="submit" class="btn btn-primary">Confirm</button>
+                        <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <!-- Modal -->
@@ -43,7 +76,34 @@
                 </div>
                 <form method="POST" role="form" id="courseForm">  {% csrf_token %}
                     <div class="modal-body">
-                        {{ form.as_p }}
+                        {% for hidden_field in form.hidden_fields %}
+                            {{ hidden_field }}
+                        {% endfor %}
+                        <div class="form-group">
+                            {{ form.course_dept_code.label }}
+
+                            {% render_field form.course_dept_code class='form-control' %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.course_num_code.label }}
+                            {% render_field form.course_num_code class='form-control' %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.course_seats.label }}
+                            {% render_field form.course_seats class='form-control' %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.course_name.label }}
+                            {% render_field form.course_name class='form-control' %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.course_description.label }}
+                            {% render_field form.course_description class='form-control' %}
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" id="submit" class="btn btn-primary">Save</button>
@@ -55,51 +115,10 @@
         </div>
     </div>
 
-
-
 {% endblock content %}
 
 {% block js %}
-    {#    <script src="{% static 'js/courses.js' %}"></script>#}
-    <script>
-        console.log(Math.random())
-        $(document).ready(function () {
-            var $editForm = $("#courseForm");
-            $editForm.submit(function (event) {
-                event.preventDefault();
-                var $formData = $(this).serialize();
-                console.log($formData);
-                {#var $endPoint = $editForm.attr('data-url') || window.location.href;#}
-                {#console.log($endPoint);#}
-                $.ajax({
-                    method: "POST",
-                    url: '{% url 'courses' %}',
-                    data: $formData,
-                    success: handleSuccess,
-                    error: handleError,
-                })
 
-                function handleSuccess(data, textStatus, jqXHR) {
-                    $editForm[0].reset();
-                    $("#courseAddModal").modal('hide');
-                    console.log(data);
-                    console.log(textStatus);
-                    console.log(jqXHR);
-                    var $obj = data['obj'];
-                    var $row = $("#courseList").prepend("<tr></tr>");
-                    $row.append("<td>" + data['dept']);
-                    $row.append("<td>" + $obj['course_num_code']);
-                    $row.append("<td>" + $obj['course_name']);
-                    $row.append("<td>" + $obj['course_seats']);
-                    $row.append("<td>" + $obj['course_description']);
-                }
+    <script src="{% static 'js/courses.js' %}"></script>
 
-                function handleError(jqXHR, textStatus, errorThrown) {
-                    console.log(jqXHR);
-                    console.log(textStatus);
-                    console.log(errorThrown)
-                }
-            });
-        });
-    </script>
 {% endblock js %}
