@@ -7,12 +7,31 @@ from django.http import JsonResponse
 
 # Create your views here.
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, UpdateView, CreateView, TemplateView, FormView
+from django.views.generic import ListView, DetailView, UpdateView, CreateView, TemplateView
 from django.views.generic.edit import DeleteView
 from extra_views import ModelFormSetView, InlineFormSetView
 
 from class_management.forms import StudentForm, InstructorForm, CourseForm
 from class_management.models import Student, Instructor, Course, Department, PhoneNumber
+
+
+class AjaxMixin(object):
+    def form_invalid(self, form):
+        response = super(AjaxMixin, self).form_invalid(form)
+        if self.request.is_ajax():
+            return JsonResponse(form.errors, status=400)
+        else:
+            return response
+
+    def form_valid(self, form):
+        response = super(AjaxMixin, self).form_valid(form)
+        if self.request.is_ajax():
+            data = {
+                'message': "Ajax call successful.",
+            }
+            return JsonResponse(data)
+        else:
+            return response
 
 
 class StudentListView(ListView):
@@ -23,7 +42,7 @@ class StudentListView(ListView):
     template_name = 'class_management/student_list.html'
 
 
-class StudentDetailView(ImageResponseMixin, DetailView):
+class StudentDetailView(DetailView):
     """
     Detail view to display the details of the student.
     """
@@ -247,25 +266,6 @@ class CourseDeleteView(DeleteView):
             'pk': pk,
         }
         return JsonResponse(data)
-
-
-class AjaxMixin(object):
-    def form_invalid(self, form):
-        response = super(AjaxMixin, self).form_invalid(form)
-        if self.request.is_ajax():
-            return JsonResponse(form.errors, status=400)
-        else:
-            return response
-
-    def form_valid(self, form):
-        response = super(AjaxMixin, self).form_valid(form)
-        if self.request.is_ajax():
-            data = {
-                'message': "Ajax call successful.",
-            }
-            return JsonResponse(data)
-        else:
-            return response
 
 
 class DepartmentListView(ListView):

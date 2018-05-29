@@ -1,5 +1,4 @@
-from django.forms import ModelForm, modelformset_factory
-from extra_views import InlineFormSet
+from django.forms import ModelForm
 
 from class_management.models import Student, Instructor, Course, Department
 
@@ -29,12 +28,6 @@ class CourseForm(ModelForm):
     class Meta:
         model = Course
         fields = ['course_dept_code', 'course_num_code', 'course_name', 'course_seats', 'course_description']
-
-
-class EmptyDepartmentForm(ModelForm):
-    class Meta:
-        model = Department
-        fields = []
 
 
 class DepartmentForm(ModelForm):
