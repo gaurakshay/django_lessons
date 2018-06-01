@@ -302,7 +302,11 @@ class DepartmentListView(ListView):
 class DepartmentAddView(ModelFormSetView):
     model = Department
     template_name = 'class_management/dept_edit.html'
-    fields = '__all__'
+    # fields = '__all__'
+    fields = ['department_name', 'department_code', 'department_chair']
+    factory_kwargs = {
+        'extra': 0,
+    }
 
 
 class PhoneAddView(InlineFormSetView):
@@ -310,6 +314,10 @@ class PhoneAddView(InlineFormSetView):
     inline_model = PhoneNumber
     template_name = 'class_management/phone_view.html'
     fields = ['area_code', 'first_three', 'last_four']
+    # error_messages = {
+    #     # 'area_code': _('XXX'), # Undescore for internationalization.
+    #     'area_code': 'XXX',
+    # }
     factory_kwargs = {
         'widgets': {
             'area_code': TextInput(),
@@ -317,4 +325,8 @@ class PhoneAddView(InlineFormSetView):
             'last_four': TextInput(),
         },
         'extra': 1,
+        # 'error_messages': {
+        #     # 'area_code': _('XXX'), # Underscore for internationalization.
+        #     'area_code': 'XXX',
+        # }
     }

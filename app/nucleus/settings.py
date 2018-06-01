@@ -45,7 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.admindocs',
     # Added entry for widget-tweaks for that sweet sweet form display
     'widget_tweaks',
+    # Entry for django behave
+    'django_behave',
 ]
+
+TEST_RUNNER = 'django_behave.runner.DjangoBehaveTestSuiteRunner'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -91,8 +95,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tutorial_database',
-        'USER': 'tutorial_user',
-        'PASSWORD': 'tutorial',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '',
     }

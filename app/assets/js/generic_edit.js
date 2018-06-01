@@ -20,12 +20,19 @@ $(document).ready(function () {
         });
 
         function handleSuccess(data, textStatus, jqXHR) {
-            console.log("SUCCESSFULLY ADDED!!.");
+            console.log("SUCCESSFULLY ADDED#####!!.");
             // {#console.log(data);#}
             // {#console.log(textStatus);#}
             // {#console.log(jqXHR);#}
+
+            $('#container').append("<h1>HOLY MACARONI THIS WORKED</h1>");
+
+            console.log("Function fired.");
+            $('.alert').show();
+
             console.log("Resetting the form.");
             $editForm[0].reset(); // reset form data
+
         }
 
         function handleError(jqXHR, textStatus, errorThrown) {

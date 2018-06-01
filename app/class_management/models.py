@@ -17,7 +17,8 @@ class Department(Model):
     Primary key is the department key.
     """
     class Meta:
-        db_table="departments"
+        db_table = "departments"
+        ordering = ['department_name']
     department_name = CharField(max_length=200)
     department_code = CharField(max_length=5, primary_key=True)
     department_chair = CharField(max_length=200)
@@ -64,6 +65,7 @@ class Student(Model):
         """
         db_table = 'students'
         ordering = ['student_id']
+
     student_id = IntegerField(primary_key=True)
     first_name = CharField(max_length=200)
     last_name = CharField(max_length=200)
