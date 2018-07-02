@@ -47,7 +47,7 @@ class StudentDetailView(DetailView):
     Detail view to display the details of the student.
     """
     model = Student
-    pic = model.stud_pic
+    # pic = model.stud_pic
     template_name = 'class_management/student_detail.html'
 
 
@@ -104,7 +104,8 @@ class WelcomeView(TemplateView):
     """
     The virtual home page for the app.
     """
-    template_name = "class_management/welcome.html"
+    # template_name = "welcome.html"
+    template_name = "welcome.html"
 
 
 class InstructorListView(ListView):
